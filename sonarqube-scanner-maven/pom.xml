@@ -100,4 +100,14 @@
       </build>
     </profile>
   </profiles>
+         
+         
+         <distributionManagement>
+   
+    <snapshotRepository>
+      <id>nexus</id>
+      <name>Snapshot</name>
+      <url>http://localhost:8081/repository/maven-snapshots</url>
+    </snapshotRepository>
+  </distributionManagement>
 </project>
