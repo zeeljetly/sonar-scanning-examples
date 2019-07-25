@@ -8,7 +8,8 @@
   <packaging>pom</packaging>
   <version>1.0-SNAPSHOT</version>
 
-  <name>Maven</name>
+<!-- demo of github webhook -->
+ <name>Maven</name>
 
   <modules>
     <module>app-java</module>
