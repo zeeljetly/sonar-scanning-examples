@@ -9,6 +9,7 @@
   <version>1.0-SNAPSHOT</version>
 
 <!-- demo of github webhook -->
+         <!-- demo2 of github webhook -->
  <name>Maven</name>
 
   <modules>
