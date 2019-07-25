@@ -8,9 +8,7 @@
   <packaging>pom</packaging>
   <version>1.0-SNAPSHOT</version>
 
-<!-- demo of github webhook -->
-         <!-- demo2 of github webhook -->
- <name>Maven</name>
+  <name>Example of SonarQube Scanner for Maven + Code Coverage by UT and IT</name>
 
   <modules>
     <module>app-java</module>
@@ -39,7 +37,7 @@
     </dependency>
   </dependencies>
 
- <build>
+  <build>
     <plugins>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
@@ -51,7 +49,7 @@
         </configuration>
       </plugin>     
     </plugins>
-  </build> 
+  </build>
 
   <profiles>
     <profile>
@@ -62,19 +60,6 @@
       <build>
         <pluginManagement>
           <plugins>
-            <plugin>
-      <groupId>org.sonarsource.scanner.maven</groupId>
-      <artifactId>sonar-maven-plugin</artifactId>
-     <!-- <version>3.5.0.1254</version> -->
-      <executions>
-        <execution>
-          <phase>verify</phase>
-          <goals>
-            <goal>sonar</goal>
-          </goals>
-        </execution>
-      </executions>
-    </plugin>       
             <plugin>
               <groupId>org.jacoco</groupId>
               <artifactId>jacoco-maven-plugin</artifactId>
