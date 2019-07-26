@@ -44,6 +44,7 @@
       <activation>
         <activeByDefault>true</activeByDefault>
       </activation>
+           </profile>
       <profile>
             <id>all-tests</id>
             <properties>
@@ -66,7 +67,6 @@
                 <skip.unit.tests>true</skip.unit.tests>
             </properties>
         </profile>
-    </profile>
   </profiles>     
   <build>
            <finalName>maven-integration-testing</finalName>
