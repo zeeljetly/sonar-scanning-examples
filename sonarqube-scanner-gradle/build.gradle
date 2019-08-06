@@ -75,9 +75,7 @@ artifactory {
         }
     }
 }
-task artifactoryPublish { 
-    dependsOn jar
-}
+
 publishing {
     publications {
         mavenJava(MavenPublication) {
@@ -85,7 +83,9 @@ publishing {
         }
     }
 }
-
+artifactoryPublish { 
+    dependsOn jar
+}
 /*task sourcesJar(type: Jar) {
     archiveClassifier = 'sources'
     from sourceSets.main.allJava
