@@ -75,7 +75,7 @@ artifactory {
         }
     }
 }
-artifactoryPublish { 
+task artifactoryPublish { 
     dependsOn jar
 }
 publishing {
