@@ -51,7 +51,7 @@ dependencies {
     // This dependency is found on compile classpath of this component and consumers.
     compile 'com.google.guava:guava:21.0'
 
-    classpath "org.jfrog.buildinfo:build-info-extractor-gradle:latest.release"
+   // classpath "org.jfrog.buildinfo:build-info-extractor-gradle:latest.release"
   
     // Use JUnit test framework
     testCompile 'junit:junit:4.12'
