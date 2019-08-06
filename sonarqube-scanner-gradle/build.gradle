@@ -74,12 +74,18 @@ artifactory {
         }
     }
 }
+artifactoryPublish { 
+    dependsOn jar
+}
 publishing {
     publications {
         mavenJava(MavenPublication) {
             from components.java
         }
     }
+}
+defaults {
+   publications ('mavenJava')
 }
 
 /*task sourcesJar(type: Jar) {
