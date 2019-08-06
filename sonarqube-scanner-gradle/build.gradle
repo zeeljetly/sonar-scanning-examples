@@ -83,9 +83,9 @@ publishing {
         }
     }
 }
-artifactoryPublish { 
+/*artifactoryPublish { 
     dependsOn jar
-}
+}*/
 /*task sourcesJar(type: Jar) {
     archiveClassifier = 'sources'
     from sourceSets.main.allJava
