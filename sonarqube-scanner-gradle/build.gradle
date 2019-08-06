@@ -27,7 +27,7 @@ apply plugin: 'application'
 
 apply plugin: 'jacoco'
 apply plugin: 'maven-publish'
-apply plugin: 'com.jfrog.artifactory'
+apply plugin: "com.jfrog.artifactory"
 
 // In this section you declare where to find the dependencies of your project
 repositories {
@@ -44,17 +44,21 @@ repositories {
         }
 }
 
+
+
 dependencies {
     // This dependency is found on compile classpath of this component and consumers.
     compile 'com.google.guava:guava:21.0'
 
-  classpath "org.jfrog.buildinfo:build-info-extractor-gradle:3.0.1"
+    classpath "org.jfrog.buildinfo:build-info-extractor-gradle:latest.release"
   
     // Use JUnit test framework
     testCompile 'junit:junit:4.12'
     
     
 }
+apply plugin: 'maven-publish'
+apply plugin: "com.jfrog.artifactory"
 artifactory {
     contextUrl = "${artifactory_contextUrl}"
     publish {
