@@ -27,7 +27,7 @@ apply plugin: 'application'
 
 apply plugin: 'jacoco'
 apply plugin: 'maven-publish'
-apply plugin: "com.jfrog.artifactory"
+apply plugin: 'com.jfrog.artifactory'
 
 // In this section you declare where to find the dependencies of your project
 repositories {
