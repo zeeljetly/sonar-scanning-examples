@@ -26,27 +26,63 @@ apply plugin: 'java'
 apply plugin: 'application'
 
 apply plugin: 'jacoco'
+apply plugin: 'maven-publish'
+apply plugin: "com.jfrog.artifactory"
 
 // In this section you declare where to find the dependencies of your project
 repositories {
     // Use jcenter for resolving your dependencies.
     // You can declare any Maven/Ivy/file repository here.
     jcenter()
+    maven {
+            url 'http://localhost:8082/artifactory/libs-release'
+            credentials {
+                username = "${artifactory_user}"
+                password = "${artifactory_password}"
+            }
+            name = "maven-main-cache"
+        }
 }
 
 dependencies {
     // This dependency is found on compile classpath of this component and consumers.
     compile 'com.google.guava:guava:21.0'
 
+  classpath "org.jfrog.buildinfo:build-info-extractor-gradle:3.0.1"
+  
     // Use JUnit test framework
     testCompile 'junit:junit:4.12'
+    
+    
+}
+artifactory {
+    contextUrl = "${artifactory_contextUrl}"
+    publish {
+        repository {
+            repoKey = 'libs-snapshot-local'
+            username = "${artifactory_user}"
+            password = "${artifactory_password}"
+            maven = true
+
+        }       
+        defaults {
+            publications ('mavenJava')
+        }
+    }
+}
+publishing {
+    publications {
+        mavenJava(MavenPublication) {
+            from components.java
+        }
+    }
 }
 
-task sourcesJar(type: Jar) {
+/*task sourcesJar(type: Jar) {
     archiveClassifier = 'sources'
     from sourceSets.main.allJava
 }
-
+*/
 // Define the main class for the application
 mainClassName = 'App'
 
