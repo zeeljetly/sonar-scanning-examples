@@ -50,6 +50,7 @@
                     <threshold>Low</threshold>
                     <findbugsXmlOutput>true</findbugsXmlOutput>
                     <xmlOutput>true</xmlOutput>
+                    <xmlOutputDirectory>target/site</xmlOutputDirectory>
                 </configuration>
             </plugin>
         </plugins>
