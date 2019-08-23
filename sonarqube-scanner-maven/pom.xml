@@ -48,11 +48,42 @@
           <target>1.7</target>
         </configuration>
       </plugin>   
-      <plugin>
+<!--      <plugin>
         <groupId>org.apache.maven.plugins</groupId>
          <artifactId>maven-site-plugin</artifactId>
          <version>3.7.1</version>
       </plugin>
+    -->   <plugin>
+            <groupId>org.codehaus.mojo</groupId>
+            <artifactId>findbugs-maven-plugin</artifactId>
+            <version>2.5.2</version>
+            <configuration>
+                <!--
+                    Enables analysis which takes more memory but finds more bugs.
+                    If you run out of memory, changes the value of the effort element
+                    to 'Low'.
+                -->
+                <effort>Max</effort>
+                <!-- Reports all bugs (other values are medium and max) -->
+                <threshold>Low</threshold>
+                <!-- Produces XML report -->
+                <xmlOutput>true</xmlOutput>
+                <!-- Configures the directory in which the XML report is created -->
+                <findbugsXmlOutputDirectory>${project.build.directory}/findbugs</findbugsXmlOutputDirectory>
+            </configuration>
+            <executions>
+                <!-- 
+                    Ensures that FindBugs inspects source code when project is compiled. 
+                -->
+                <execution>
+                    <id>analyze-compile</id>
+                    <phase>compile</phase>
+                    <goals>
+                        <goal>check</goal>
+                    </goals>
+                </execution>
+            </executions>
+        </plugin>
     </plugins>
   </build>
 
@@ -65,6 +96,7 @@
       <build>
       <pluginManagement>
        <plugins>
+                
        <!--  <plugin>
               <groupId>org.jacoco</groupId>
               <artifactId>jacoco-maven-plugin</artifactId>
@@ -110,21 +142,7 @@
   </profiles>
            
            
-         <reporting>
-    <plugins>
-      <plugin>
-        <groupId>org.codehaus.mojo</groupId>
-        <artifactId>findbugs-maven-plugin</artifactId>
-        <version>3.0.3</version>
-        <configuration>
-          <xmlOutput>true</xmlOutput>
-          <!-- Optional directory to put findbugs xdoc xml report -->
-          <xmlOutputDirectory>target/site</xmlOutputDirectory>
-          
-        </configuration>
-      </plugin>
-    </plugins>
-  </reporting>            
+      
          
            <distributionManagement>
    
