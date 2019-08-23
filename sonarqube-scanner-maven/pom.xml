@@ -113,7 +113,7 @@
                         </goals>
                     </execution>
                 </executions>
-                <configuration>
+            <!--    <configuration>
                     <transformationSets>
                         <transformationSet>
                             <dir>${project.build.directory}/findbugs</dir>
@@ -123,7 +123,7 @@
                             <!--<stylesheet>plain.xsl</stylesheet> -->
                             <!--<stylesheet>fancy.xsl</stylesheet> -->
                             <!--<stylesheet>summary.xsl</stylesheet> -->
-                            <fileMappers>
+                --><!--            <fileMappers>
                                 <fileMapper
                                     implementation="org.codehaus.plexus.components.io.filemappers.FileExtensionMapper">
                                     <targetExtension>.html</targetExtension>
@@ -131,14 +131,14 @@
                             </fileMappers>
                         </transformationSet>
                     </transformationSets>
-                </configuration>
-                <dependencies>
+                </configuration>-->
+                <!--<dependencies>
                     <dependency>
                         <groupId>com.google.code.findbugs</groupId>
                         <artifactId>findbugs</artifactId>
                         <version>2.0.0</version>
                     </dependency>
-                </dependencies>
+                </dependencies>-->
             </plugin>
                 
       </plugins>
