@@ -96,14 +96,7 @@
               </execution>
             </executions>
           </plugin>
-        </plugins>
-      </build>
-    </profile>
-  </profiles>
-         
- <reporting>
-    <plugins>
-      <plugin>
+          <plugin>
         <groupId>org.codehaus.mojo</groupId>
         <artifactId>findbugs-maven-plugin</artifactId>
         <version>3.0.6-SNAPSHOT</version>
@@ -113,10 +106,11 @@
           <xmlOutputDirectory>target/site</xmlOutputDirectory>
         </configuration>
       </plugin>
-    </plugins>
-  </reporting>
-         
-         
+        </plugins>
+      </build>
+    </profile>
+  </profiles>
+                  
          <distributionManagement>
    
     <snapshotRepository>
